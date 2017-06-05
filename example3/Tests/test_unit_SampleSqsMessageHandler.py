@@ -45,5 +45,4 @@ class TestSampleHandler(TestCase):
         queue_mock.write.assert_called_once_with({
             'result': 5
         })
-
         sqs_patcher.stop()

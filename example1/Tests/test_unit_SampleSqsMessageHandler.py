@@ -26,4 +26,8 @@ class TestSampleHandler(TestCase):
 
     def test_raises_exception_when_non_numeric_session_id(self):
         handler = SampleSqsMessageHandler()
-        self.assertRaises(TypeError, handler.validate_message)
+
+        self.assertRaises(TypeError, handler.validate_message, {
+            'project_name': 'rius',
+            'session_id': 'fghfgh'
+        })
